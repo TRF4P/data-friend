@@ -1,0 +1,14 @@
+{
+  "name": "cytoscape",
+  "homepage": "https://github.com/stanley-gu/cytoscape",
+  "_release": "860e6d8567",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "860e6d8567a2bf2358b9daa1dda9fe896c4b5b95"
+  },
+  "_source": "git://github.com/stanley-gu/cytoscape.git",
+  "_target": "*",
+  "_originalSource": "cytoscape",
+  "_direct": true
+}
