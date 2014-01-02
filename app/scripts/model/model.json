@@ -1,0 +1,35 @@
+{
+	"rootNodeModel":
+	[
+		{
+			"name":"person",
+			"properties":
+			[
+				{
+					"propertyName":"firstName",
+					"dataType":"string",
+					"validation":"enforce",
+					"required":"mandatory",
+				},
+				{
+					"propertyName":"lastName",
+					"dataType":"string",
+					"validation":"enforce",
+					"required":"mandatory",
+				}
+			]
+
+			
+		},
+		{"name":"place"},
+		{"name":"thing"}
+	]
+		,
+	"rootRelationshipModel":
+	[
+		{"name":"knows"},
+		{"name":"doesnt"},
+		{"name":"perspoijon"}
+	]
+
+}
