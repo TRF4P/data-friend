@@ -5,14 +5,14 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li id="Home" class="active">
+                <li data-step="1" data-intro="This is the home button" id="Home" class="active bootstro">
                     <a ng-click="scrollTo('Home')">Home</a>
                 </li>
                 <li>
                     <a href="#dataModel">Data Model</a>
                 </li>
                 <li>
-                    <a ng-click="scrollTo('dd4')">Manipulate Data</a>
+                    <a href="#manipulator">Manipulate Data</a>
                 </li>
                 <li>
                     <a href="#dataBuilder">Build Data!</a>
@@ -21,10 +21,10 @@
                     <a class="dropdown-toggle" data-toggle="dropdown">Visualizations <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Define Data</a>
+                            <a href="#testview">Testview</a>
                         </li>
                         <li>
-                            <a href="#">View Data</a>
+                            <a class="btn btn-large btn-success" onclick="bootstro.start('.bootstro');">Show me how</a>
                         </li>
                     </ul>
                 </li>

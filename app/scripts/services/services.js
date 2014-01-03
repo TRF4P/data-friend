@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('dataAppApp')
-'use strict';
+//angular.module('dataAppApp')
+//'use strict';
 
 /* Services */
 
@@ -56,5 +56,5 @@ angular.module('dataAppApp.services', []).
 	      return deferred.promise;
 	    }
 
-  	}
-	})
+  	};
+	});

@@ -1,0 +1,36 @@
+<form name="propForm" class="form-inline">
+	<legend>Property Rules</legend>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Property Label</th>
+			<th>Property DataType</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="property in selectedProperties" ng-model="property">
+			<td>		
+				<div class="form-group">
+			 <label class="sr-only" for="propLabel">Property Label</label>
+			<input type="text" class="form-control" ng-model="property.label" placeholder="label" id="propLabel">
+		</div></td>
+			<td>
+						<div class="form-group">
+			<select ui-select2 ng-model="property.dataType" data-placeholder="string" style="width:150px">
+				<option></option>
+			<option ng-repeat="type in dataTypes">{{type}}</option>
+			</select>
+		</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+	<a href="" ng-click="addContact()">
+	<button type="button" class="btn btn-default" ng-click="createProperty()">
+	<span class="glyphicon glyphicon-plus-sign"></span>
+	</a> 
+	<button type="submit" class="btn btn-primary">Submit</button>
+	<pre>{{rootModel}}</pre>
+</form>

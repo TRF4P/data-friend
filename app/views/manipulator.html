@@ -1,0 +1,44 @@
+<div class="row" style="padding-right:30px">
+	<div class="col-md-2">
+		<div class="bs-sidebar hidden-print affix">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="btn-group-vertical">
+						<button type="button" class="btn btn-default" id="createNode" 
+						ng-click="url='views/forms/createNodeForm.html'">Create Node</button> <button type="button" class="btn btn-default" ng-click="url='views/forms/propertyForm.html'">Create Relationship</button>
+						<button type="button" class="btn btn-default">Don't care</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-hide="false" class="col-md-10">
+		<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div id="search">
+			
+										<span>Yep</span> <select ui-select2 ng-model="selectedNose" ng-change="changeSelectedNode()"  style="width:500px">
+		
+									<option ng-repeat="type in rootModel.nodes">{{type.nodeTypeLabel}}</option>
+
+									</select>
+									<pre>{{selectedNose}}</pre>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+		<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div id="manCon" editor-select>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+	</div>
+</div>

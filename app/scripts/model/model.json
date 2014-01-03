@@ -9,13 +9,13 @@
 					"propertyName":"firstName",
 					"dataType":"string",
 					"validation":"enforce",
-					"required":"mandatory",
+					"required":"mandatory"
 				},
 				{
-					"propertyName":"lastName",
+					"propertyName":"Name",
 					"dataType":"string",
 					"validation":"enforce",
-					"required":"mandatory",
+					"required":"mandatory"
 				}
 			]
 

@@ -5,7 +5,10 @@ angular.module('dataAppApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'dataAppApp.services'
+  'dataAppApp.services',
+  'dataAppApp.crudservice',
+  'dataAppApp.directives',
+  'ui.select2'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -15,6 +18,14 @@ angular.module('dataAppApp', [
       })
       .when('/dataModel', {
         templateUrl: 'views/dataModel.html',
+        controller: 'MainCtrl'
+      })
+      .when('/testview', {
+        templateUrl: 'views/testview.html',
+        controller: 'MainCtrl'
+      })
+      .when('/manipulator', {
+        templateUrl: 'views/manipulator.html',
         controller: 'MainCtrl'
       })
       .when('/dataBuilder', {
