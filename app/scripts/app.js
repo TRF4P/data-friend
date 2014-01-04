@@ -8,6 +8,7 @@ angular.module('dataAppApp', [
   'dataAppApp.services',
   'dataAppApp.crudservice',
   'dataAppApp.directives',
+  'dataAppApp.datamodel',
   'ui.select2'
 ])
   .config(function ($routeProvider) {

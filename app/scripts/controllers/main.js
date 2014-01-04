@@ -1,18 +1,26 @@
 'use strict';
 
 angular.module('dataAppApp')
-  .controller('MainCtrl', function ($scope, $http, dataService, crudService) {
-    dataService.loadConfig('/scripts/model/model.json')
+  .controller('MainCtrl', function ($scope, $http, dataService, crudService, dataModel) {
+    dataService.loadConfig('/scripts/model/dataset.js')
     .then(
       function (data) {
-        $scope.nodes = data.rootNodeModel;
-        $scope.rels = data.rootRelationshipModel;
+       // console.log(data);
+       // $scope.pleaseWork = new data.RootModel();
+       // $scope.rels = data.rootRelationshipModel;
         //$scope.sample = $scope.samples[0];
       },
       function (error) {
         $scope.error = error;
       }
     );
+    //console.log(dataModel);
+    dataModel.dummyNodeCommit();
+    dataModel.dummyNodeCommit();
+    dataModel.dummyNodeCommit();
+    dataModel.dummyNodeCommit();
+  //  console.log(dataModel.getNodeTypeKeys());
+  //  console.log(dataModel.getRelTypeKeys());
     /** CRUD Functions  **/
 
     function ModelRoot() {
@@ -56,10 +64,14 @@ angular.module('dataAppApp')
       };
 
         $scope.changeSelectedNode = function () {
-        console.log($scope.selectedNose);
-        $scope.selectedNode = $scope.readNodeType($scope.rootModel,$scope.selectedNose);
-         $scope.selectedProperties = $scope.readProperties($scope.selectedNode.properties);
-       // return modelRoot.nodes[nodeKey];
+          console.log($scope.selectedNose);
+          var bar = $scope.selectedNose;
+          $scope.selectedNode = $scope.testModel.getNodeType(bar);
+         // $scope.dataModel.nodes[bar];
+           //$scope.selectedProperties = $scope.readProperties($scope.selectedNode.properties);
+          $scope.selectedProperties = $scope.testModel.nodes[$scope.selectedNose].properties;
+           console.log("nodtHer");
+         // return modelRoot.nodes[nodeKey];
       };
 
 
@@ -81,8 +93,8 @@ angular.module('dataAppApp')
    // $scope.selectedNode.properties
    // $selectedNode.properties[];
    console.log($scope.selectedProperties);
-  var newProp = new PropertyType();
-    $scope.selectedProperties.push(newProp);
+  var newProp = $scope.testModel.propertyType();
+    $scope.selectedProperties[chance.hash()] = newProp;
 
    // modelVar.nodes[nodeVar] = new PropertyType();
 
@@ -103,7 +115,7 @@ $scope.submitProperty = function(nodeVar,property){
   nodeVar.properties[property.label] = property;
 };
 
-
+  
 
     /** update property Functions  **/
 
@@ -112,9 +124,12 @@ $scope.submitProperty = function(nodeVar,property){
 
 
   $scope.url="views/forms/propertyForm.html";
+
   $scope.changeUrl = function(value){
    return $scope.url
   };
+
+
   $scope.removeProperty= function(contact) {
     for (var i = 0, ii = nodeType.properties.length; i < ii; i++) {
       if (contact === nodeType.properties[i]) {
@@ -127,29 +142,9 @@ $scope.submitProperty = function(nodeVar,property){
 
 var rootModel = new ModelRoot();
   $scope.rootModel = rootModel;
-  var person = new NodeType();
-  person.nodeTypeLabel="person";
-  var firstName = new PropertyType();
-  firstName.label="firstName";
-   var lastName = new PropertyType();
-   lastName.label="lastName";
-  $scope.submitProperty(person,firstName);
-  $scope.submitProperty(person,lastName);
-  $scope.rootModel.nodes["person"] = person;
+  var testModel = dataModel;
+  $scope.testModel = testModel;
 
-   var place = new NodeType();
-place.nodeTypeLabel="place";
-  var location = new PropertyType();
-location.label="location";
-   var cats = new PropertyType();
-   cats.label="cats";
-  $scope.submitProperty(person,firstName);
-  $scope.submitProperty(person,lastName);
-  $scope.rootModel.nodes["place"] = place;
-
-
-  console.log($scope.rootModel.nodes);
-  $scope.selectedNode = $scope.readNodeType($scope.rootModel,'person');
-  $scope.selectedProperties = $scope.readProperties($scope.selectedNode.properties);
-
+  console.log($scope.testModel.nodes[$scope.testModel.getNodeTypeKeys()[0]]);
+  
   });

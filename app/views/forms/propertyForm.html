@@ -8,7 +8,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="property in selectedProperties" ng-model="property">
+		<tr ng-repeat="property in selectedProperties" ng-model="property" ng-class="{active: property.committed==false, success: property.committed==true}">
+			<span>{{propety.committed}}</span>
 			<td>		
 				<div class="form-group">
 			 <label class="sr-only" for="propLabel">Property Label</label>
