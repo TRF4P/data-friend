@@ -9,7 +9,8 @@ angular.module('dataAppApp', [
   'dataAppApp.crudservice',
   'dataAppApp.directives',
   'dataAppApp.datamodel',
-  'ui.select2'
+  'ui.select2',
+  'ui.codemirror'
 ])
   .config(function ($routeProvider) {
     $routeProvider
