@@ -8,11 +8,19 @@
                 <li data-step="1" data-intro="This is the home button" id="Home" class="active bootstro">
                     <a ng-click="scrollTo('Home')">Home</a>
                 </li>
-                <li>
-                    <a href="#dataModel">Data Model</a>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Model View<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#manipulator">Edit Model</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-large btn-success" onclick="bootstro.start('.bootstro');">Show me how</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#manipulator">Manipulate Data</a>
+                    <a href="#dataView">Data View</a>
                 </li>
                 <li>
                     <a href="#dataBuilder">Build Data!</a>
